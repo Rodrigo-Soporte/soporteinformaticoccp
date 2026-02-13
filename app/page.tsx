@@ -1,65 +1,157 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="max-w-7xl mx-auto px-6 py-16 space-y-32">
+
+      {/* HERO */}
+      <section className="grid md:grid-cols-2 gap-12 items-center">
+
+        <div className="space-y-6 fade-in">
+          <p className="text-sm font-semibold text-sky-600 tracking-wide">
+            SOLUCIONES TECNOLÓGICAS PROFESIONALES
           </p>
+
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            Soporte Informático <br />
+            <span className="text-sky-600 underline decoration-sky-600">
+              Profesional y Confiable
+            </span>
+          </h1>
+
+          <p className="text-slate-600 text-lg leading-relaxed">
+            Somos una empresa especializada en soporte informático
+            integral, orientada a empresas, pymes y personas que
+            necesitan estabilidad tecnológica, continuidad operacional
+            y crecimiento digital seguro.
+          </p>
+
+          <p className="text-slate-600 leading-relaxed">
+            Entendemos que la tecnología es el núcleo operativo de
+            cualquier organización moderna. Por ello, ofrecemos
+            soluciones técnicas personalizadas que permiten mantener
+            la infraestructura informática optimizada, protegida y
+            alineada con los objetivos estratégicos del negocio.
+          </p>
+
+          <p className="text-slate-600 leading-relaxed">
+            Nuestro enfoque combina diagnóstico preventivo,
+            implementación de mejoras continuas y asesoría tecnológica
+            especializada para reducir riesgos, aumentar productividad
+            y garantizar un funcionamiento eficiente de los sistemas.
+          </p>
+
+          <ul className="grid sm:grid-cols-2 gap-3 text-slate-700 pt-2">
+            <li>✔ Continuidad operacional garantizada</li>
+            <li>✔ Diagnóstico técnico especializado</li>
+            <li>✔ Soporte remoto y presencial</li>
+            <li>✔ Desarrollo web moderno y escalable</li>
+          </ul>
+
+          <div className="flex flex-wrap gap-4 pt-6">
+            <Link href="/servicios" className="btn-primary">
+              Ver Servicios
+            </Link>
+            <Link href="/contacto" className="btn-secondary">
+              Contáctanos
+            </Link>
+            <Link href="/quienes-somos" className="btn-outline">
+              Quiénes Somos
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="flex justify-center fade-in">
+          <Image
+            src="/soporte-informatico.png"
+            alt="Soporte informático profesional"
+            width={540}
+            height={540}
+            priority
+            sizes="(max-width: 768px) 90vw, 540px"
+            className="rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1"
+          />
         </div>
-      </main>
-    </div>
+
+      </section>
+
+      {/* BLOQUES PRINCIPALES */}
+      <section className="grid md:grid-cols-3 gap-10">
+
+        <article className="card floating-card">
+          <h2 className="section-title">Nuestra Misión</h2>
+          <p className="text-slate-600 leading-relaxed">
+            Asegurar que la tecnología funcione como un pilar estratégico
+            para nuestros clientes, entregando soporte confiable,
+            preventivo y alineado con los objetivos operacionales.
+          </p>
+          <p className="text-slate-600 mt-4 leading-relaxed">
+            Trabajamos para minimizar tiempos de inactividad, mejorar
+            el rendimiento de los sistemas y proporcionar estabilidad
+            continua en entornos tecnológicos cada vez más exigentes.
+          </p>
+        </article>
+
+        <article className="card floating-card">
+          <h2 className="section-title">Experiencia Técnica</h2>
+          <p className="text-slate-600 leading-relaxed">
+            Contamos con experiencia en diagnóstico de equipamiento
+            computacional, redes de datos, renovación tecnológica,
+            respaldo de información y desarrollo web profesional.
+          </p>
+          <p className="text-slate-600 mt-4 leading-relaxed">
+            Implementamos soluciones modernas utilizando tecnologías
+            actuales como Next.js, Tailwind CSS y arquitecturas
+            optimizadas para rendimiento y escalabilidad.
+          </p>
+        </article>
+
+        <article className="card floating-card">
+          <h2 className="section-title">Enfoque Profesional</h2>
+          <p className="text-slate-600 leading-relaxed">
+            Nuestra metodología se basa en análisis técnico detallado,
+            planificación estratégica y ejecución eficiente de cada
+            proyecto.
+          </p>
+          <p className="text-slate-600 mt-4 leading-relaxed">
+            Nos posicionamos como un socio tecnológico de confianza,
+            brindando soporte cercano, comunicación clara y soluciones
+            adaptadas a cada tipo de cliente.
+          </p>
+        </article>
+
+      </section>
+
+      {/* BLOQUE AUTORIDAD Y SEO */}
+      <section className="card floating-card">
+        <h2 className="section-title">
+          Soporte Informático Integral para un Entorno Digital Exigente
+        </h2>
+
+        <p className="text-slate-600 leading-relaxed mb-4">
+          En un entorno empresarial donde la tecnología es clave para
+          la productividad, contar con un servicio de soporte
+          informático profesional permite anticipar problemas,
+          optimizar recursos y proteger la información crítica.
+        </p>
+
+        <p className="text-slate-600 leading-relaxed mb-4">
+          Ofrecemos soluciones que abarcan desde la implementación de
+          nuevas tecnologías hasta la modernización de sistemas
+          existentes, garantizando compatibilidad, seguridad y
+          rendimiento óptimo en todos los dispositivos: computadores,
+          tablets, dispositivos móviles y navegadores modernos.
+        </p>
+
+        <p className="text-slate-600 leading-relaxed">
+          Nuestro compromiso es proporcionar soporte técnico confiable,
+          soluciones escalables y una infraestructura tecnológica
+          preparada para los desafíos actuales y futuros.
+        </p>
+      </section>
+
+    </main>
   );
 }
+
