@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
+  poweredByHeader: false,
+
+  compress: true,
+
   async headers() {
     return [
       {
@@ -24,6 +28,16 @@ const nextConfig: NextConfig = {
             key: "X-XSS-Protection",
             value: "1; mode=block",
           },
+
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
         ],
       },
     ];
@@ -31,4 +45,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

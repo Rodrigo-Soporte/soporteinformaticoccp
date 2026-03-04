@@ -3,23 +3,20 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
+    setMounted(true);
 
-    if (stored === "dark") {
-      document.documentElement.classList.add("dark");
-      setDark(true);
-    } else if (stored === "light") {
+    const saved = localStorage.getItem("theme");
+
+    if (saved === "light") {
       document.documentElement.classList.remove("dark");
       setDark(false);
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (prefersDark) {
-        document.documentElement.classList.add("dark");
-        setDark(true);
-      }
+      document.documentElement.classList.add("dark");
+      setDark(true);
     }
   }, []);
 
@@ -35,13 +32,14 @@ export default function ThemeToggle() {
     }
   };
 
+  if (!mounted) return null;
+
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+      className="fixed top-6 right-6 z-50 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-black/60 backdrop-blur-md text-black dark:text-white shadow-lg hover:scale-105 transition-all"
     >
       {dark ? "☀️ Claro" : "🌙 Oscuro"}
     </button>
   );
 }
-

@@ -2,36 +2,33 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-40 border-t border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300">
+    <footer className="mt-40 border-t border-slate-800 bg-gradient-to-b from-[#0f1c2e] to-[#0b1624] text-slate-300">
 
-      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-4 gap-14">
 
-        {/* EMPRESA */}
-        <div className="space-y-6">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white underline decoration-sky-600">
+        {/* COLUMNA 1 */}
+        <div className="space-y-5">
+          <h3 className="text-white font-semibold text-lg underline underline-offset-4">
             Soporte Informático Profesional
           </h3>
 
-          <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
-            Empresa especializada en soluciones tecnológicas integrales
-            para empresas, pymes y personas. Brindamos soporte
-            informático confiable, diagnóstico técnico avanzado,
-            continuidad operacional y desarrollo web moderno.
+          <p className="text-sm leading-relaxed text-slate-400">
+            Empresa especializada en soluciones tecnológicas integrales para empresas, pymes y personas. 
+            Brindamos soporte informático confiable, diagnóstico técnico avanzado, continuidad operacional y desarrollo web moderno.
           </p>
 
-          <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
-            Nuestro compromiso es garantizar estabilidad, seguridad y
-            rendimiento en cada implementación tecnológica.
+          <p className="text-sm leading-relaxed text-slate-400">
+            Nuestro compromiso es garantizar estabilidad, seguridad y rendimiento en cada implementación tecnológica.
           </p>
         </div>
 
-        {/* SERVICIOS */}
-        <div className="space-y-6">
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white underline decoration-sky-600">
+        {/* COLUMNA 2 */}
+        <div className="space-y-5">
+          <h3 className="text-white font-semibold text-lg underline underline-offset-4">
             Servicios
           </h3>
 
-          <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+          <ul className="space-y-3 text-sm text-slate-400">
             <li>• Implementación de nuevas tecnologías</li>
             <li>• Diagnóstico computacional y redes</li>
             <li>• Continuidad operacional</li>
@@ -41,52 +38,61 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* NAVEGACIÓN */}
-        <div className="space-y-6">
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white underline decoration-sky-600">
+        {/* COLUMNA 3 */}
+        <div className="space-y-5">
+          <h3 className="text-white font-semibold text-lg underline underline-offset-4">
             Navegación
           </h3>
 
-          <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+          <ul className="space-y-3 text-sm text-slate-400">
             <li>
-              <Link href="/" className="hover:text-sky-600 transition-colors">
+              <Link href="/" className="hover:text-cyan-400 transition">
                 Inicio
               </Link>
             </li>
             <li>
-              <Link href="/servicios" className="hover:text-sky-600 transition-colors">
+              <Link href="/servicios" className="hover:text-cyan-400 transition">
                 Servicios
               </Link>
             </li>
             <li>
-              <Link href="/quienes-somos" className="hover:text-sky-600 transition-colors">
+              <Link href="/blog" className="hover:text-cyan-400 transition">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/quienes-somos" className="hover:text-cyan-400 transition">
                 Quiénes Somos
               </Link>
             </li>
             <li>
-              <Link href="/contacto" className="hover:text-sky-600 transition-colors">
+              <Link href="/contacto" className="hover:text-cyan-400 transition">
                 Contacto
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* CONTACTO + CTA */}
-        <div className="space-y-6">
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white underline decoration-sky-600">
+        {/* COLUMNA 4 */}
+        <div className="space-y-5">
+          <h3 className="text-white font-semibold text-lg underline underline-offset-4">
             Información de Contacto
           </h3>
 
-          <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-            <li>📞 +56 9 4939 8922</li>
-            <li>📧 soporte2024ti@gmail.com</li>
-            <li>📍 Atención remota y presencial</li>
-          </ul>
+          <div className="space-y-3 text-sm text-slate-400">
+            <p>📞 +56 9 4939 8922</p>
+            <p>📧 soporte2024ti@gmail.com</p>
+            <p>📍 Atención remota y presencial</p>
+          </div>
 
           <div className="pt-4">
             <Link
               href="/contacto"
-              className="btn-primary w-full text-center block"
+              className="inline-block px-8 py-3 rounded-full font-semibold text-white
+                         bg-gradient-to-r from-cyan-500 to-blue-500
+                         shadow-lg shadow-cyan-500/30
+                         hover:scale-105 hover:shadow-cyan-400/60
+                         transition-all duration-300"
             >
               Solicitar Soporte
             </Link>
@@ -95,31 +101,27 @@ export default function Footer() {
 
       </div>
 
-      {/* SECCIÓN INFERIOR */}
-      <div className="border-t border-slate-200 dark:border-slate-700">
-        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      {/* BARRA INFERIOR */}
+      <div className="border-t border-slate-800 py-6 px-6 text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
 
-          <p className="text-xs text-slate-500 dark:text-slate-400 text-center md:text-left">
-            © {new Date().getFullYear()} Soporte Informático Profesional. 
-            Todos los derechos reservados.
-          </p>
+        <p>
+          © {new Date().getFullYear()} Soporte Informático Profesional. Todos los derechos reservados.
+        </p>
 
-          <div className="flex gap-6 text-xs text-slate-500 dark:text-slate-400">
-            <span className="hover:text-sky-600 transition-colors cursor-pointer">
-              Política de Privacidad
-            </span>
-            <span className="hover:text-sky-600 transition-colors cursor-pointer">
-              Términos y Condiciones
-            </span>
-            <span className="hover:text-sky-600 transition-colors cursor-pointer">
-              Protección de Datos
-            </span>
-          </div>
-
+        <div className="flex gap-6 mt-4 md:mt-0">
+          <Link href="#" className="hover:text-cyan-400 transition">
+            Política de Privacidad
+          </Link>
+          <Link href="#" className="hover:text-cyan-400 transition">
+            Términos y Condiciones
+          </Link>
+          <Link href="#" className="hover:text-cyan-400 transition">
+            Protección de Datos
+          </Link>
         </div>
+
       </div>
 
     </footer>
   );
 }
-

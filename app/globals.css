@@ -1,123 +1,218 @@
 @import "tailwindcss";
 
-/* ===== VARIABLES ===== */
+/* =========================
+   VARIABLES MODO CLARO / OSCURO
+========================= */
 
 :root {
-  --primary: #0284c7;
-  --primary-light: #0ea5e9;
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --card-bg: #ffffff;
+  --bg-main: #1e293b;
+  --text-main: #e2e8f0;
+  --glass-bg: rgba(30, 41, 59, 0.55);
 }
 
 .dark {
-  --background: #0f172a;
-  --foreground: #e2e8f0;
-  --card-bg: #1e293b;
+  --bg-main: #0b1120;
+  --text-main: #f1f5f9;
+  --glass-bg: rgba(15, 23, 42, 0.6);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  transition: background 0.3s ease, color 0.3s ease;
+  background: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* ===== ANIMACIONES ===== */
+/* =========================
+   GRID ANIMADO FUERTE
+========================= */
 
-.fade-in {
-  animation: fadeIn 0.8s ease forwards;
+@keyframes moveGrid {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 800px 800px, 800px 800px; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.18) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: moveGrid 25s linear infinite;
+  z-index: -100;
 }
 
-/* ===== BOTONES PREMIUM ===== */
+/* =========================
+   SCANNER BEAM
+========================= */
 
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: white;
-  padding: 0.75rem 1.6rem;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: all 0.25s ease;
-  box-shadow: 0 8px 20px rgba(2,132,199,0.35);
+@keyframes scanner {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(2,132,199,0.5);
+.scanner {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.18), transparent);
+  animation: scanner 7s linear infinite;
+  z-index: -80;
+  pointer-events: none;
 }
 
-.btn-primary:active {
-  transform: scale(0.97);
+/* =========================
+   RADAR
+========================= */
+
+@keyframes radarSpin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to { transform: translate(-50%,-50%) rotate(360deg); }
 }
 
-.btn-secondary {
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 0.75rem 1.6rem;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: all 0.25s ease;
+.radar {
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  border: 1px solid rgba(6,182,212,0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: radarSpin 30s linear infinite;
+  z-index: -90;
 }
 
-.btn-secondary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(2,132,199,0.25);
+/* =========================
+   ENERGY WAVE
+========================= */
+
+@keyframes pulseWave {
+  0% { transform: translate(-50%,-50%) scale(0.3); opacity: 0.8; }
+  100% { transform: translate(-50%,-50%) scale(2.5); opacity: 0; }
 }
 
-.btn-outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  padding: 0.75rem 1.6rem;
-  border-radius: 999px;
-  transition: all 0.25s ease;
+.wave {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border: 2px solid rgba(59,130,246,0.5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: pulseWave 6s ease-out infinite;
+  z-index: -85;
 }
 
-.btn-outline:hover {
-  background: var(--primary);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(2,132,199,0.35);
+/* =========================
+   RUIDO DIGITAL
+========================= */
+
+@keyframes noise {
+  0%,100%{ transform: translate(0,0); }
+  50%{ transform: translate(-3%,3%); }
 }
 
-/* ===== CARDS ===== */
+.noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.06;
+  animation: noise 0.4s infinite;
+  z-index: -70;
+}
 
-.card {
-  background: var(--card-bg);
+/* =========================
+   GLITCH OVERLAY
+========================= */
+
+@keyframes glitch {
+  0%,100%{ opacity:0.04; }
+  50%{ opacity:0.08; }
+}
+
+.glitch-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,0,255,0.02), rgba(0,255,255,0.02));
+  animation: glitch 3s infinite;
+  z-index: -60;
+}
+
+/* =========================
+   CUADRADOS
+========================= */
+
+.square {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(59,130,246,0.6);
+  background: rgba(59,130,246,0.1);
+  box-shadow: 0 0 40px rgba(59,130,246,0.5);
+  z-index: -50;
+}
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+.particle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -40;
+}
+
+.particle.blue {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  box-shadow: 0 0 25px #3b82f6;
+}
+
+.particle.cyan {
+  width: 6px;
+  height: 6px;
+  background: #06b6d4;
+  box-shadow: 0 0 18px #06b6d4;
+}
+
+/* =========================
+   GLASS
+========================= */
+
+.glass-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 18px;
   padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 30px rgba(2,132,199,0.08);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(2,132,199,0.08);
+  box-shadow: 0 0 25px rgba(6,182,212,0.15);
 }
 
-/* Efecto flotante continuo */
-.floating-card {
-  animation: float 6s ease-in-out infinite;
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(6,182,212,0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.4s ease;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(6,182,212,0.35);
 }
 
-.floating-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(2,132,199,0.25);
-  border: 1px solid rgba(2,132,199,0.25);
+.section-title-tech {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #3b82f6;
 }
-
-/* ===== TITULOS ===== */
-
-.section-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-decoration: underline;
-  text-decoration-color: var(--primary);
-}
-

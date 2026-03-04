@@ -3,155 +3,152 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-16 space-y-32">
+    <main className="relative z-10 text-[0.85rem]">
 
       {/* HERO */}
-      <section className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden py-20">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
 
-        <div className="space-y-6 fade-in">
-          <p className="text-sm font-semibold text-sky-600 tracking-wide">
-            SOLUCIONES TECNOLÓGICAS PROFESIONALES
-          </p>
+          <div className="space-y-6">
 
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Soporte Informático <br />
-            <span className="text-sky-600 underline decoration-sky-600">
-              Profesional y Confiable
-            </span>
-          </h1>
+            <p className="text-xs tracking-widest text-cyan-400 font-semibold">
+              SOLUCIONES TECNOLÓGICAS PROFESIONALES
+            </p>
 
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Somos una empresa especializada en soporte informático
-            integral, orientada a empresas, pymes y personas que
-            necesitan estabilidad tecnológica, continuidad operacional
-            y crecimiento digital seguro.
-          </p>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+              Soporte Informático <br />
+              <span className="text-blue-400">
+                Profesional y Confiable
+              </span>
+            </h1>
 
-          <p className="text-slate-600 leading-relaxed">
-            Entendemos que la tecnología es el núcleo operativo de
-            cualquier organización moderna. Por ello, ofrecemos
-            soluciones técnicas personalizadas que permiten mantener
-            la infraestructura informática optimizada, protegida y
-            alineada con los objetivos estratégicos del negocio.
-          </p>
+            <p className="opacity-80 leading-relaxed">
+              Somos una empresa especializada en soporte informático integral, orientada a empresas, pymes y personas que necesitan estabilidad tecnológica, continuidad operacional y crecimiento digital seguro.
+            </p>
 
-          <p className="text-slate-600 leading-relaxed">
-            Nuestro enfoque combina diagnóstico preventivo,
-            implementación de mejoras continuas y asesoría tecnológica
-            especializada para reducir riesgos, aumentar productividad
-            y garantizar un funcionamiento eficiente de los sistemas.
-          </p>
+            <p className="opacity-80 leading-relaxed">
+              Entendemos que la tecnología es el núcleo operativo de cualquier organización moderna. Por ello, ofrecemos soluciones técnicas personalizadas que permiten mantener la infraestructura informática optimizada, protegida y alineada con los objetivos estratégicos del negocio.
+            </p>
 
-          <ul className="grid sm:grid-cols-2 gap-3 text-slate-700 pt-2">
-            <li>✔ Continuidad operacional garantizada</li>
-            <li>✔ Diagnóstico técnico especializado</li>
-            <li>✔ Soporte remoto y presencial</li>
-            <li>✔ Desarrollo web moderno y escalable</li>
-          </ul>
+            <p className="opacity-80 leading-relaxed">
+              Nuestro enfoque combina diagnóstico preventivo, implementación de mejoras continuas y asesoría tecnológica especializada para reducir riesgos, aumentar productividad y garantizar un funcionamiento eficiente de los sistemas.
+            </p>
 
-          <div className="flex flex-wrap gap-4 pt-6">
-            <Link href="/servicios" className="btn-primary">
-              Ver Servicios
-            </Link>
-            <Link href="/contacto" className="btn-secondary">
-              Contáctanos
-            </Link>
-            <Link href="/quienes-somos" className="btn-outline">
-              Quiénes Somos
-            </Link>
+            <ul className="space-y-2 pt-2 opacity-90">
+              <li>✔ Continuidad operacional garantizada</li>
+              <li>✔ Diagnóstico técnico especializado</li>
+              <li>✔ Soporte remoto y presencial</li>
+              <li>✔ Desarrollo web moderno y escalable</li>
+            </ul>
+
+            <div className="flex flex-wrap gap-3 pt-4">
+              <Link
+                href="/servicios"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm transition"
+              >
+                Ver Servicios
+              </Link>
+
+              <Link
+                href="/contacto"
+                className="border border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white transition px-4 py-2 rounded-md text-sm"
+              >
+                Contáctanos
+              </Link>
+
+              <Link
+                href="/quienes-somos"
+                className="opacity-70 hover:opacity-100 transition px-4 py-2 text-sm"
+              >
+                Quiénes Somos
+              </Link>
+            </div>
+
+            {/* BOTÓN BLOG MOVIDO AQUÍ */}
+            <div className="pt-4">
+              <Link
+                href="/blog"
+                className="text-blue-400 hover:text-blue-300 text-sm transition underline underline-offset-4"
+              >
+                Ir al Blog Tecnológico →
+              </Link>
+            </div>
+
           </div>
-        </div>
 
-        <div className="flex justify-center fade-in">
-          <Image
-            src="/soporte-informatico.png"
-            alt="Soporte informático profesional"
-            width={540}
-            height={540}
-            priority
-            sizes="(max-width: 768px) 90vw, 540px"
-            className="rounded-xl shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1"
-          />
-        </div>
+          {/* IMAGEN SUBIDA Y ESTIRADA */}
+          <div className="flex justify-center items-start">
+            <Image
+              src="/soporte-informatico.png"
+              alt="Soporte informático profesional"
+              width={520}
+              height={620}
+              priority
+              className="rounded-lg shadow-xl transition duration-500 hover:scale-105 object-cover"
+            />
+          </div>
 
+        </div>
       </section>
 
       {/* BLOQUES PRINCIPALES */}
-      <section className="grid md:grid-cols-3 gap-10">
+      <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8">
 
-        <article className="card floating-card">
-          <h2 className="section-title">Nuestra Misión</h2>
-          <p className="text-slate-600 leading-relaxed">
-            Asegurar que la tecnología funcione como un pilar estratégico
-            para nuestros clientes, entregando soporte confiable,
-            preventivo y alineado con los objetivos operacionales.
+        <article className="glass-card">
+          <h2 className="section-title-tech">Nuestra Misión</h2>
+          <p className="opacity-80 leading-relaxed">
+            Asegurar que la tecnología funcione como un pilar estratégico para nuestros clientes, entregando soporte confiable, preventivo y alineado con los objetivos operacionales.
           </p>
-          <p className="text-slate-600 mt-4 leading-relaxed">
-            Trabajamos para minimizar tiempos de inactividad, mejorar
-            el rendimiento de los sistemas y proporcionar estabilidad
-            continua en entornos tecnológicos cada vez más exigentes.
+          <p className="opacity-80 mt-4 leading-relaxed">
+            Trabajamos para minimizar tiempos de inactividad, mejorar el rendimiento de los sistemas y proporcionar estabilidad continua en entornos tecnológicos cada vez más exigentes.
           </p>
         </article>
 
-        <article className="card floating-card">
-          <h2 className="section-title">Experiencia Técnica</h2>
-          <p className="text-slate-600 leading-relaxed">
-            Contamos con experiencia en diagnóstico de equipamiento
-            computacional, redes de datos, renovación tecnológica,
-            respaldo de información y desarrollo web profesional.
+        <article className="glass-card">
+          <h2 className="section-title-tech">Experiencia Técnica</h2>
+          <p className="opacity-80 leading-relaxed">
+            Contamos con experiencia en diagnóstico de equipamiento computacional, redes de datos, renovación tecnológica, respaldo de información y desarrollo web profesional.
           </p>
-          <p className="text-slate-600 mt-4 leading-relaxed">
-            Implementamos soluciones modernas utilizando tecnologías
-            actuales como Next.js, Tailwind CSS y arquitecturas
-            optimizadas para rendimiento y escalabilidad.
+          <p className="opacity-80 mt-4 leading-relaxed">
+            Implementamos soluciones modernas utilizando tecnologías actuales como Next.js, Tailwind CSS y arquitecturas optimizadas para rendimiento y escalabilidad.
           </p>
         </article>
 
-        <article className="card floating-card">
-          <h2 className="section-title">Enfoque Profesional</h2>
-          <p className="text-slate-600 leading-relaxed">
-            Nuestra metodología se basa en análisis técnico detallado,
-            planificación estratégica y ejecución eficiente de cada
-            proyecto.
+        <article className="glass-card">
+          <h2 className="section-title-tech">Enfoque Profesional</h2>
+          <p className="opacity-80 leading-relaxed">
+            Nuestra metodología se basa en análisis técnico detallado, planificación estratégica y ejecución eficiente de cada proyecto.
           </p>
-          <p className="text-slate-600 mt-4 leading-relaxed">
-            Nos posicionamos como un socio tecnológico de confianza,
-            brindando soporte cercano, comunicación clara y soluciones
-            adaptadas a cada tipo de cliente.
+          <p className="opacity-80 mt-4 leading-relaxed">
+            Nos posicionamos como un socio tecnológico de confianza, brindando soporte cercano, comunicación clara y soluciones adaptadas a cada tipo de cliente.
           </p>
         </article>
 
       </section>
 
-      {/* BLOQUE AUTORIDAD Y SEO */}
-      <section className="card floating-card">
-        <h2 className="section-title">
-          Soporte Informático Integral para un Entorno Digital Exigente
-        </h2>
+      {/* BLOQUE AUTORIDAD */}
+      <section className="max-w-4xl mx-auto px-6 pb-20">
+        <div className="glass-section space-y-4">
 
-        <p className="text-slate-600 leading-relaxed mb-4">
-          En un entorno empresarial donde la tecnología es clave para
-          la productividad, contar con un servicio de soporte
-          informático profesional permite anticipar problemas,
-          optimizar recursos y proteger la información crítica.
-        </p>
+          <h2 className="section-title-tech">
+            Soporte Informático Integral para un Entorno Digital Exigente
+          </h2>
 
-        <p className="text-slate-600 leading-relaxed mb-4">
-          Ofrecemos soluciones que abarcan desde la implementación de
-          nuevas tecnologías hasta la modernización de sistemas
-          existentes, garantizando compatibilidad, seguridad y
-          rendimiento óptimo en todos los dispositivos: computadores,
-          tablets, dispositivos móviles y navegadores modernos.
-        </p>
+          <p className="opacity-80 leading-relaxed">
+            En un entorno empresarial donde la tecnología es clave para la productividad, contar con un servicio de soporte informático profesional permite anticipar problemas, optimizar recursos y proteger la información crítica.
+          </p>
 
-        <p className="text-slate-600 leading-relaxed">
-          Nuestro compromiso es proporcionar soporte técnico confiable,
-          soluciones escalables y una infraestructura tecnológica
-          preparada para los desafíos actuales y futuros.
-        </p>
+          <p className="opacity-80 leading-relaxed">
+            Ofrecemos soluciones que abarcan desde la implementación de nuevas tecnologías hasta la modernización de sistemas existentes, garantizando compatibilidad, seguridad y rendimiento óptimo en todos los dispositivos: computadores, tablets, dispositivos móviles y navegadores modernos.
+          </p>
+
+          <p className="opacity-80 leading-relaxed">
+            Nuestro compromiso es proporcionar soporte técnico confiable, soluciones escalables y una infraestructura tecnológica preparada para los desafíos actuales y futuros.
+          </p>
+
+        </div>
       </section>
 
     </main>
   );
 }
-
