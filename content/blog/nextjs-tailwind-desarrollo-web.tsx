@@ -5,6 +5,7 @@ export const post = {
     "Las páginas web modernas deben ser rápidas, seguras y escalables. Descubre por qué Next.js y Tailwind CSS son la combinación ideal para proyectos profesionales.",
   date: "2026-03-04",
   cover: "/blog-desarrollo-web.jpg",
+  category: "Desarrollo Web",
 
   content: (
     <>
@@ -92,12 +93,6 @@ export const post = {
 
       <h2>Beneficios de estas tecnologías para empresas</h2>
 
-      <p>
-        Implementar una página web utilizando Next.js y Tailwind CSS no
-        solo mejora la apariencia visual del sitio, sino que también aporta
-        beneficios concretos para el negocio.
-      </p>
-
       <ul>
         <li>Mayor velocidad de carga de las páginas</li>
         <li>Mejor posicionamiento en buscadores (SEO)</li>
@@ -105,43 +100,6 @@ export const post = {
         <li>Escalabilidad para futuras funcionalidades</li>
         <li>Mantenimiento técnico más eficiente</li>
       </ul>
-
-      <p>
-        Estas características permiten que la infraestructura digital de
-        una empresa esté preparada para soportar crecimiento, tráfico y
-        nuevas integraciones tecnológicas.
-      </p>
-
-      <h2>Arquitectura preparada para crecer</h2>
-
-      <p>
-        Una de las mayores ventajas de trabajar con Next.js es que permite
-        construir plataformas que pueden evolucionar con el tiempo,
-        integrando nuevos sistemas sin necesidad de reconstruir el sitio
-        desde cero.
-      </p>
-
-      <p>
-        Esto facilita la integración de herramientas empresariales
-        avanzadas y servicios externos.
-      </p>
-
-      <h3>Ejemplos de integraciones posibles</h3>
-
-      <ul>
-        <li>Sistemas administrativos personalizados</li>
-        <li>Paneles de control empresariales</li>
-        <li>Integraciones con APIs externas</li>
-        <li>Servicios en la nube</li>
-        <li>Sistemas de autenticación y seguridad</li>
-        <li>Plataformas de análisis y métricas</li>
-      </ul>
-
-      <p>
-        Esta capacidad de integración convierte a Next.js en una base
-        sólida para proyectos digitales que necesitan evolucionar con
-        el tiempo.
-      </p>
 
       <h2>Conclusión</h2>
 
@@ -151,13 +109,6 @@ export const post = {
         La combinación de <strong>Next.js</strong> y <strong>Tailwind CSS</strong>
         permite construir soluciones digitales rápidas, escalables
         y alineadas con los estándares actuales del desarrollo web.
-      </p>
-
-      <p>
-        Para empresas que buscan una presencia digital sólida y preparada
-        para el crecimiento, esta arquitectura tecnológica representa
-        una de las alternativas más eficientes y profesionales disponibles
-        en la actualidad.
       </p>
     </>
   ),

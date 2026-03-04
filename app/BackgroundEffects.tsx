@@ -15,7 +15,7 @@ export default function BackgroundEffects() {
 
   useEffect(() => {
 
-    const generated = Array.from({ length: 60 }).map((_, i) => ({
+    const generated: Particle[] = Array.from({ length: 60 }).map((_, i) => ({
       id: i,
       top: Math.random() * 100,
       left: Math.random() * 100,

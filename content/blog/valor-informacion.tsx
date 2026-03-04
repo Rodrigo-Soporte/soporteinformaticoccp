@@ -5,6 +5,7 @@ export const post = {
     "La información es uno de los activos más valiosos de una empresa. Descubre por qué protegerla y gestionarla correctamente es clave para la continuidad operacional.",
   date: "2026-03-04",
   cover: "/blog-informacion.jpg",
+  category: "Gestión de Información",
 
   content: (
     <>

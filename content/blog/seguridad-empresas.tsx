@@ -5,6 +5,7 @@ export const post = {
     "Guía profesional para proteger infraestructura tecnológica empresarial contra amenazas modernas.",
   date: "2026-03-04",
   cover: "/blog-seguridad.jpg",
+  category: "Ciberseguridad",
 
   content: (
     <>

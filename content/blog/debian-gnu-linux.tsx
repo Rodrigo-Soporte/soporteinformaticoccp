@@ -5,6 +5,7 @@ export const post = {
     "Debian GNU/Linux es una de las distribuciones más estables y seguras del mundo. Descubre por qué es una excelente opción para servidores y entornos empresariales.",
   date: "2026-03-04",
   cover: "/blog-debian.jpg",
+  category: "Infraestructura Linux",
 
   content: (
     <>
