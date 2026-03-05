@@ -11,13 +11,13 @@ export default function Home() {
 
           <div className="space-y-6">
 
-            <p className="text-xs tracking-widest text-cyan-400 font-semibold">
+            <p className="text-xs tracking-widest text-green-600 dark:text-cyan-400 font-semibold">
               SOLUCIONES TECNOLÓGICAS PROFESIONALES
             </p>
 
             <h1 className="text-3xl md:text-4xl font-bold leading-tight">
               Soporte Informático <br />
-              <span className="text-blue-400">
+              <span className="text-green-700 dark:text-blue-400">
                 Profesional y Confiable
               </span>
             </h1>
@@ -42,16 +42,17 @@ export default function Home() {
             </ul>
 
             <div className="flex flex-wrap gap-3 pt-4">
+
               <Link
                 href="/servicios"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm transition"
+                className="bg-green-600 dark:bg-blue-500 hover:bg-green-700 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm transition"
               >
                 Ver Servicios
               </Link>
 
               <Link
                 href="/contacto"
-                className="border border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white transition px-4 py-2 rounded-md text-sm"
+                className="border border-green-600 text-green-700 dark:border-blue-400 dark:text-blue-400 hover:bg-green-600 hover:text-white dark:hover:bg-blue-500 transition px-4 py-2 rounded-md text-sm"
               >
                 Contáctanos
               </Link>
@@ -62,13 +63,13 @@ export default function Home() {
               >
                 Quiénes Somos
               </Link>
+
             </div>
 
-            {/* BOTÓN BLOG MOVIDO AQUÍ */}
             <div className="pt-4">
               <Link
                 href="/blog"
-                className="text-blue-400 hover:text-blue-300 text-sm transition underline underline-offset-4"
+                className="text-green-700 dark:text-blue-400 hover:text-green-600 dark:hover:text-blue-300 text-sm transition underline underline-offset-4"
               >
                 Ir al Blog Tecnológico →
               </Link>
@@ -76,7 +77,6 @@ export default function Home() {
 
           </div>
 
-          {/* IMAGEN SUBIDA Y ESTIRADA */}
           <div className="flex justify-center items-start">
             <Image
               src="/soporte-informatico.png"
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOQUES PRINCIPALES */}
+      {/* BLOQUES */}
       <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8">
 
         <article className="glass-card">

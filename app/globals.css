@@ -1,19 +1,39 @@
 @import "tailwindcss";
 
 /* =========================
+   AUMENTO GLOBAL DE TIPOGRAFÍA (+20%)
+========================= */
+
+html {
+  font-size: 120%;
+}
+
+/* =========================
    VARIABLES MODO CLARO / OSCURO
 ========================= */
 
+/* MODO CLARO (VERDE TECNOLÓGICO) */
+
 :root {
-  --bg-main: #1e293b;
-  --text-main: #e2e8f0;
-  --glass-bg: rgba(30, 41, 59, 0.55);
+  --bg-main: #dfeee4;
+  --text-main: #14532d;
+  --glass-bg: rgba(187,247,208,0.45);
+
+  --accent-primary: #16a34a;
+  --accent-secondary: #22c55e;
+  --accent-soft: rgba(34,197,94,0.25);
 }
+
+/* MODO OSCURO (AZUL TECNOLÓGICO ORIGINAL) */
 
 .dark {
   --bg-main: #0b1120;
   --text-main: #f1f5f9;
-  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-bg: rgba(15,23,42,0.6);
+
+  --accent-primary: #3b82f6;
+  --accent-secondary: #06b6d4;
+  --accent-soft: rgba(59,130,246,0.25);
 }
 
 body {
@@ -25,7 +45,7 @@ body {
 }
 
 /* =========================
-   GRID ANIMADO FUERTE
+   GRID ANIMADO
 ========================= */
 
 @keyframes moveGrid {
@@ -38,15 +58,15 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(59,130,246,0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59,130,246,0.18) 1px, transparent 1px);
+    linear-gradient(var(--accent-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-soft) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: moveGrid 25s linear infinite;
   z-index: -100;
 }
 
 /* =========================
-   SCANNER BEAM
+   SCANNER
 ========================= */
 
 @keyframes scanner {
@@ -59,7 +79,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 160px;
-  background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.18), transparent);
+  background: linear-gradient(to bottom, transparent, var(--accent-soft), transparent);
   animation: scanner 7s linear infinite;
   z-index: -80;
   pointer-events: none;
@@ -78,12 +98,13 @@ body::before {
   position: fixed;
   width: 700px;
   height: 700px;
-  border: 1px solid rgba(6,182,212,0.3);
+  border: 1px solid var(--accent-primary);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   animation: radarSpin 30s linear infinite;
+  opacity: 0.25;
   z-index: -90;
 }
 
@@ -100,48 +121,14 @@ body::before {
   position: fixed;
   width: 500px;
   height: 500px;
-  border: 2px solid rgba(59,130,246,0.5);
+  border: 2px solid var(--accent-primary);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   animation: pulseWave 6s ease-out infinite;
+  opacity: 0.4;
   z-index: -85;
-}
-
-/* =========================
-   RUIDO DIGITAL
-========================= */
-
-@keyframes noise {
-  0%,100%{ transform: translate(0,0); }
-  50%{ transform: translate(-3%,3%); }
-}
-
-.noise {
-  position: fixed;
-  inset: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  opacity: 0.06;
-  animation: noise 0.4s infinite;
-  z-index: -70;
-}
-
-/* =========================
-   GLITCH OVERLAY
-========================= */
-
-@keyframes glitch {
-  0%,100%{ opacity:0.04; }
-  50%{ opacity:0.08; }
-}
-
-.glitch-overlay {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255,0,255,0.02), rgba(0,255,255,0.02));
-  animation: glitch 3s infinite;
-  z-index: -60;
 }
 
 /* =========================
@@ -152,9 +139,9 @@ body::before {
   position: fixed;
   width: 120px;
   height: 120px;
-  border: 2px solid rgba(59,130,246,0.6);
-  background: rgba(59,130,246,0.1);
-  box-shadow: 0 0 40px rgba(59,130,246,0.5);
+  border: 2px solid var(--accent-primary);
+  background: var(--accent-soft);
+  box-shadow: 0 0 40px var(--accent-primary);
   z-index: -50;
 }
 
@@ -172,15 +159,15 @@ body::before {
 .particle.blue {
   width: 8px;
   height: 8px;
-  background: #3b82f6;
-  box-shadow: 0 0 25px #3b82f6;
+  background: var(--accent-primary);
+  box-shadow: 0 0 25px var(--accent-primary);
 }
 
 .particle.cyan {
   width: 6px;
   height: 6px;
-  background: #06b6d4;
-  box-shadow: 0 0 18px #06b6d4;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 18px var(--accent-secondary);
 }
 
 /* =========================
@@ -190,16 +177,16 @@ body::before {
 .glass-section {
   background: var(--glass-bg);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(59,130,246,0.3);
+  border: 1px solid var(--accent-primary);
   border-radius: 18px;
   padding: 2rem;
-  box-shadow: 0 0 25px rgba(6,182,212,0.15);
+  box-shadow: 0 0 25px var(--accent-soft);
 }
 
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(6,182,212,0.3);
+  border: 1px solid var(--accent-primary);
   border-radius: 16px;
   padding: 1.5rem;
   transition: all 0.4s ease;
@@ -207,12 +194,12 @@ body::before {
 
 .glass-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(6,182,212,0.35);
+  box-shadow: 0 0 25px var(--accent-primary);
 }
 
 .section-title-tech {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  color: #3b82f6;
+  color: var(--accent-primary);
 }

@@ -37,7 +37,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-black/60 backdrop-blur-md text-black dark:text-white shadow-lg hover:scale-105 transition-all"
+      className="fixed bottom-8 right-6 md:bottom-6 z-50 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-black/60 backdrop-blur-md text-black dark:text-white shadow-lg hover:scale-105 transition-all"
     >
       {dark ? "☀️ Claro" : "🌙 Oscuro"}
     </button>
