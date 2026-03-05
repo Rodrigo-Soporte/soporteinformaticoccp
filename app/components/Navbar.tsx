@@ -64,15 +64,18 @@ export default function Navbar() {
         </nav>
 
         {/* MOBILE HEADER */}
-        <div className="md:hidden w-full flex justify-between items-center px-6">
+        <div className="md:hidden w-full flex justify-between items-center px-6 py-3 rounded-full
+                        bg-green-200/70 dark:bg-black/60 backdrop-blur-xl border border-green-300 dark:border-white/10">
 
-          <span className="text-green-700 dark:text-white font-semibold text-sm">
+          {/* LOGO TEXTO */}
+          <span className="font-semibold text-sm text-green-900 dark:text-white">
             Soporte TI
           </span>
 
+          {/* BOTON HAMBURGUESA */}
           <button
             onClick={() => setOpen(true)}
-            className="text-green-800 dark:text-white text-2xl"
+            className="text-green-900 dark:text-white text-2xl"
           >
             ☰
           </button>
