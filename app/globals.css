@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* =========================
-   AUMENTO GLOBAL DE TIPOGRAFÍA (+20%)
+TIPOGRAFÍA
 ========================= */
 
 html {
@@ -9,26 +9,24 @@ html {
 }
 
 /* =========================
-   VARIABLES MODO CLARO / OSCURO
+VARIABLES
 ========================= */
 
-/* MODO CLARO (VERDE TECNOLÓGICO) */
-
 :root {
-  --bg-main: #dfeee4;
-  --text-main: #14532d;
-  --glass-bg: rgba(187,247,208,0.45);
+  --bg-main: #d1d5db;
+  --text-main: #111827;
 
-  --accent-primary: #16a34a;
-  --accent-secondary: #22c55e;
-  --accent-soft: rgba(34,197,94,0.25);
+  --glass-bg: rgba(203,213,225,0.55);
+
+  --accent-primary: #374151;
+  --accent-secondary: #6b7280;
+  --accent-soft: rgba(107,114,128,0.25);
 }
-
-/* MODO OSCURO (AZUL TECNOLÓGICO ORIGINAL) */
 
 .dark {
   --bg-main: #0b1120;
   --text-main: #f1f5f9;
+
   --glass-bg: rgba(15,23,42,0.6);
 
   --accent-primary: #3b82f6;
@@ -45,161 +43,151 @@ body {
 }
 
 /* =========================
-   GRID ANIMADO
+GRID TECNOLÓGICO
 ========================= */
 
 @keyframes moveGrid {
   0% { background-position: 0 0, 0 0; }
-  100% { background-position: 800px 800px, 800px 800px; }
+  100% { background-position: 500px 500px, 500px 500px; }
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+
   background-image:
     linear-gradient(var(--accent-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--accent-soft) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: moveGrid 25s linear infinite;
+
+  background-size: 70px 70px;
+
+  animation: moveGrid 60s linear infinite;
+
+  opacity: 0.35;
+
   z-index: -100;
 }
 
 /* =========================
-   SCANNER
+GLOW CENTRAL
 ========================= */
 
-@keyframes scanner {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-.scanner {
+body::after {
+  content: "";
   position: fixed;
-  left: 0;
-  width: 100%;
-  height: 160px;
-  background: linear-gradient(to bottom, transparent, var(--accent-soft), transparent);
-  animation: scanner 7s linear infinite;
-  z-index: -80;
+  inset: 0;
+
+  background: radial-gradient(circle at center, var(--accent-soft), transparent 65%);
+
+  opacity: 0.30;
+
+  z-index: -95;
+
   pointer-events: none;
 }
 
 /* =========================
-   RADAR
-========================= */
-
-@keyframes radarSpin {
-  from { transform: translate(-50%,-50%) rotate(0deg); }
-  to { transform: translate(-50%,-50%) rotate(360deg); }
-}
-
-.radar {
-  position: fixed;
-  width: 700px;
-  height: 700px;
-  border: 1px solid var(--accent-primary);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: radarSpin 30s linear infinite;
-  opacity: 0.25;
-  z-index: -90;
-}
-
-/* =========================
-   ENERGY WAVE
-========================= */
-
-@keyframes pulseWave {
-  0% { transform: translate(-50%,-50%) scale(0.3); opacity: 0.8; }
-  100% { transform: translate(-50%,-50%) scale(2.5); opacity: 0; }
-}
-
-.wave {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  border: 2px solid var(--accent-primary);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  animation: pulseWave 6s ease-out infinite;
-  opacity: 0.4;
-  z-index: -85;
-}
-
-/* =========================
-   CUADRADOS
-========================= */
-
-.square {
-  position: fixed;
-  width: 120px;
-  height: 120px;
-  border: 2px solid var(--accent-primary);
-  background: var(--accent-soft);
-  box-shadow: 0 0 40px var(--accent-primary);
-  z-index: -50;
-}
-
-/* =========================
-   PARTÍCULAS
-========================= */
-
-.particle {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -40;
-}
-
-.particle.blue {
-  width: 8px;
-  height: 8px;
-  background: var(--accent-primary);
-  box-shadow: 0 0 25px var(--accent-primary);
-}
-
-.particle.cyan {
-  width: 6px;
-  height: 6px;
-  background: var(--accent-secondary);
-  box-shadow: 0 0 18px var(--accent-secondary);
-}
-
-/* =========================
-   GLASS
+GLASS SECTIONS
 ========================= */
 
 .glass-section {
   background: var(--glass-bg);
   backdrop-filter: blur(14px);
-  border: 1px solid var(--accent-primary);
+  border: 1px solid var(--accent-secondary);
   border-radius: 18px;
   padding: 2rem;
-  box-shadow: 0 0 25px var(--accent-soft);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
+
+/* =========================
+CARDS
+========================= */
 
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--accent-primary);
   border-radius: 16px;
   padding: 1.5rem;
-  transition: all 0.4s ease;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+
+  transition: all 0.35s ease;
 }
 
 .glass-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px var(--accent-primary);
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.25),
+    0 0 20px var(--accent-soft);
 }
+
+/* =========================
+TÍTULOS
+========================= */
 
 .section-title-tech {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
   color: var(--accent-primary);
+}
+
+/* =========================
+NAVBAR GLOW
+========================= */
+
+.nav-glow {
+  backdrop-filter: blur(14px);
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.25),
+    0 0 12px var(--accent-soft);
+}
+
+/* =========================
+HERO IMAGE GLOW
+========================= */
+
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+
+  background: radial-gradient(
+    circle,
+    var(--accent-soft),
+    transparent 70%
+  );
+
+  filter: blur(40px);
+
+  z-index: -1;
+}
+
+.hero-image {
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.25);
+
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 35px 70px rgba(0,0,0,0.35),
+    0 0 25px var(--accent-soft);
 }

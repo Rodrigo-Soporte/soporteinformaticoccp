@@ -77,14 +77,15 @@ export default function Home() {
 
           </div>
 
-          <div className="flex justify-center items-start">
+          {/* IMAGEN HERO CON GLOW */}
+          <div className="flex justify-center items-start hero-image-wrapper">
             <Image
               src="/soporte-informatico.png"
               alt="Soporte informático profesional"
               width={520}
               height={620}
               priority
-              className="rounded-lg shadow-xl transition duration-500 hover:scale-105 object-cover"
+              className="hero-image object-cover"
             />
           </div>
 

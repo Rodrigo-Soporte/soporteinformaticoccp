@@ -22,19 +22,16 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR PRINCIPAL */}
       <header className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4">
 
-        {/* DESKTOP */}
+        {/* DESKTOP NAV */}
         <nav
           className="
           hidden md:flex
           items-center gap-8 px-8 py-3
-          backdrop-blur-xl
-          bg-black/50
+          bg-black/60
           border border-white/10
-          rounded-full
-          shadow-lg
+          nav-glow
         "
         >
           <Link href="/" className={`group ${linkStyle("/")}`}>
@@ -63,19 +60,17 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* MOBILE HEADER */}
+        {/* MOBILE */}
         <div className="md:hidden w-full flex justify-between items-center px-6 py-3 rounded-full
-                        bg-green-200/70 dark:bg-black/60 backdrop-blur-xl border border-green-300 dark:border-white/10">
+                        bg-gray-300/80 dark:bg-black/60 backdrop-blur-xl border border-gray-400 dark:border-white/10">
 
-          {/* LOGO TEXTO */}
-          <span className="font-semibold text-sm text-green-900 dark:text-white">
+          <span className="font-semibold text-sm text-gray-900 dark:text-white">
             Soporte TI
           </span>
 
-          {/* BOTON HAMBURGUESA */}
           <button
             onClick={() => setOpen(true)}
-            className="text-green-900 dark:text-white text-2xl"
+            className="text-gray-900 dark:text-white text-2xl"
           >
             ☰
           </button>
@@ -84,7 +79,6 @@ export default function Navbar() {
 
       </header>
 
-      {/* OVERLAY */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -92,7 +86,6 @@ export default function Navbar() {
         />
       )}
 
-      {/* SIDEBAR MENU */}
       <div
         className={`
         fixed top-0 right-0 h-full w-[260px]
@@ -100,8 +93,8 @@ export default function Navbar() {
         transform transition-transform duration-300
         ${open ? "translate-x-0" : "translate-x-full"}
 
-        bg-green-100 dark:bg-[#0b1120]
-        border-l border-green-300 dark:border-slate-700
+        bg-gray-200 dark:bg-[#0b1120]
+        border-l border-gray-400 dark:border-slate-700
         shadow-xl
         p-8
         flex flex-col gap-6
@@ -110,33 +103,33 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen(false)}
-          className="self-end text-xl text-green-800 dark:text-white"
+          className="self-end text-xl text-gray-900 dark:text-white"
         >
           ✕
         </button>
 
         <Link href="/" onClick={() => setOpen(false)}
-          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          className="text-gray-900 dark:text-slate-200 hover:text-black dark:hover:text-white transition">
           Inicio
         </Link>
 
         <Link href="/servicios" onClick={() => setOpen(false)}
-          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          className="text-gray-900 dark:text-slate-200 hover:text-black dark:hover:text-white transition">
           Servicios
         </Link>
 
         <Link href="/blog" onClick={() => setOpen(false)}
-          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          className="text-gray-900 dark:text-slate-200 hover:text-black dark:hover:text-white transition">
           Blog
         </Link>
 
         <Link href="/quienes-somos" onClick={() => setOpen(false)}
-          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          className="text-gray-900 dark:text-slate-200 hover:text-black dark:hover:text-white transition">
           Quiénes Somos
         </Link>
 
         <Link href="/contacto" onClick={() => setOpen(false)}
-          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          className="text-gray-900 dark:text-slate-200 hover:text-black dark:hover:text-white transition">
           Contacto
         </Link>
 
