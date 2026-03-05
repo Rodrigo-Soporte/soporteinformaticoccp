@@ -12,107 +12,132 @@ export default function Navbar() {
     `relative transition-all duration-300 px-3 py-2 text-sm ${
       pathname === path
         ? "text-white"
-        : "text-slate-400 hover:text-white"
+        : "text-slate-300 hover:text-white"
     }`;
 
   const underlineStyle = (path: string) =>
-    `absolute left-0 -bottom-1 h-[1px] bg-sky-400 transition-all duration-300 ${
+    `absolute left-0 -bottom-1 h-[1px] bg-cyan-400 transition-all duration-300 ${
       pathname === path ? "w-full" : "w-0 group-hover:w-full"
     }`;
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4">
+    <>
+      {/* NAVBAR PRINCIPAL */}
+      <header className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4">
 
-      {/* NAV DESKTOP */}
-      <nav
-        className="
-        hidden md:flex
-        items-center gap-8 px-8 py-3
-        backdrop-blur-xl bg-black/50
-        border border-white/10
-        rounded-full shadow-lg
-      "
-      >
-        <Link href="/" className={`group ${linkStyle("/")}`}>
-          Inicio
-          <span className={underlineStyle("/")} />
-        </Link>
-
-        <Link href="/servicios" className={`group ${linkStyle("/servicios")}`}>
-          Servicios
-          <span className={underlineStyle("/servicios")} />
-        </Link>
-
-        <Link href="/blog" className={`group ${linkStyle("/blog")}`}>
-          Blog
-          <span className={underlineStyle("/blog")} />
-        </Link>
-
-        <Link href="/quienes-somos" className={`group ${linkStyle("/quienes-somos")}`}>
-          Quiénes Somos
-          <span className={underlineStyle("/quienes-somos")} />
-        </Link>
-
-        <Link href="/contacto" className={`group ${linkStyle("/contacto")}`}>
-          Contacto
-          <span className={underlineStyle("/contacto")} />
-        </Link>
-      </nav>
-
-      {/* NAV MOBILE */}
-      <div className="md:hidden w-full flex justify-between items-center px-6">
-
-        {/* LOGO TEXTO */}
-        <span className="text-white font-semibold text-sm">
-          Soporte TI
-        </span>
-
-        {/* BOTON HAMBURGUESA */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="text-white text-2xl"
-        >
-          ☰
-        </button>
-
-      </div>
-
-      {/* MENU MOBILE */}
-      {open && (
-        <div
+        {/* DESKTOP */}
+        <nav
           className="
-          absolute top-16 w-[90%]
-          backdrop-blur-xl bg-black/80
+          hidden md:flex
+          items-center gap-8 px-8 py-3
+          backdrop-blur-xl
+          bg-black/50
           border border-white/10
-          rounded-xl shadow-xl
-          md:hidden
-          flex flex-col
-          text-center
-          py-4
+          rounded-full
+          shadow-lg
         "
         >
-          <Link href="/" className="py-2 text-slate-300 hover:text-white" onClick={() => setOpen(false)}>
+          <Link href="/" className={`group ${linkStyle("/")}`}>
             Inicio
+            <span className={underlineStyle("/")} />
           </Link>
 
-          <Link href="/servicios" className="py-2 text-slate-300 hover:text-white" onClick={() => setOpen(false)}>
+          <Link href="/servicios" className={`group ${linkStyle("/servicios")}`}>
             Servicios
+            <span className={underlineStyle("/servicios")} />
           </Link>
 
-          <Link href="/blog" className="py-2 text-slate-300 hover:text-white" onClick={() => setOpen(false)}>
+          <Link href="/blog" className={`group ${linkStyle("/blog")}`}>
             Blog
+            <span className={underlineStyle("/blog")} />
           </Link>
 
-          <Link href="/quienes-somos" className="py-2 text-slate-300 hover:text-white" onClick={() => setOpen(false)}>
+          <Link href="/quienes-somos" className={`group ${linkStyle("/quienes-somos")}`}>
             Quiénes Somos
+            <span className={underlineStyle("/quienes-somos")} />
           </Link>
 
-          <Link href="/contacto" className="py-2 text-slate-300 hover:text-white" onClick={() => setOpen(false)}>
+          <Link href="/contacto" className={`group ${linkStyle("/contacto")}`}>
             Contacto
+            <span className={underlineStyle("/contacto")} />
           </Link>
+        </nav>
+
+        {/* MOBILE HEADER */}
+        <div className="md:hidden w-full flex justify-between items-center px-6">
+
+          <span className="text-green-700 dark:text-white font-semibold text-sm">
+            Soporte TI
+          </span>
+
+          <button
+            onClick={() => setOpen(true)}
+            className="text-green-800 dark:text-white text-2xl"
+          >
+            ☰
+          </button>
+
         </div>
+
+      </header>
+
+      {/* OVERLAY */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+        />
       )}
 
-    </header>
+      {/* SIDEBAR MENU */}
+      <div
+        className={`
+        fixed top-0 right-0 h-full w-[260px]
+        z-50
+        transform transition-transform duration-300
+        ${open ? "translate-x-0" : "translate-x-full"}
+
+        bg-green-100 dark:bg-[#0b1120]
+        border-l border-green-300 dark:border-slate-700
+        shadow-xl
+        p-8
+        flex flex-col gap-6
+      `}
+      >
+
+        <button
+          onClick={() => setOpen(false)}
+          className="self-end text-xl text-green-800 dark:text-white"
+        >
+          ✕
+        </button>
+
+        <Link href="/" onClick={() => setOpen(false)}
+          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          Inicio
+        </Link>
+
+        <Link href="/servicios" onClick={() => setOpen(false)}
+          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          Servicios
+        </Link>
+
+        <Link href="/blog" onClick={() => setOpen(false)}
+          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          Blog
+        </Link>
+
+        <Link href="/quienes-somos" onClick={() => setOpen(false)}
+          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          Quiénes Somos
+        </Link>
+
+        <Link href="/contacto" onClick={() => setOpen(false)}
+          className="text-green-800 dark:text-slate-200 hover:text-green-600 dark:hover:text-white transition">
+          Contacto
+        </Link>
+
+      </div>
+    </>
   );
 }
