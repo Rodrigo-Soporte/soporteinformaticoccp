@@ -94,7 +94,7 @@ export default function Contacto() {
             </a>
 
             <a
-              href="https://www.instagram.com/soporteinformatico2024/"
+              href="https://www.instagram.com/soporteinformaticccp/"
               target="_blank"
               className="px-5 py-2 rounded-lg font-medium
                          bg-gradient-to-r from-pink-500 to-purple-500
@@ -106,7 +106,7 @@ export default function Contacto() {
             </a>
 
             <a
-              href="https://www.tiktok.com/@soporteinformatico2024"
+              href="https://www.tiktok.com/@soporteinformaticoccp?_r=1&_t=ZS-958UAKPjp0W"
               target="_blank"
               className="px-5 py-2 rounded-lg font-medium
                          bg-gradient-to-r from-gray-700 to-black
@@ -139,7 +139,7 @@ export default function Contacto() {
           </h2>
 
           <form
-            action="https://formspree.io/f/TU_ID_AQUI"
+            action="https://formspree.io/f/xjgekdzo"
             method="POST"
             className="space-y-4"
           >

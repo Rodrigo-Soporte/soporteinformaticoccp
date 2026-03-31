@@ -147,7 +147,8 @@ SUBRAYADOS TECNOLÓGICOS
   content: "";
 
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -4px;
 
   width: 40%;
@@ -155,6 +156,7 @@ SUBRAYADOS TECNOLÓGICOS
 
   background: linear-gradient(
     90deg,
+    transparent,
     var(--accent-primary),
     transparent
   );
@@ -167,7 +169,7 @@ SUBRAYADOS TECNOLÓGICOS
 }
 
 .section-title-tech:hover::after {
-  width: 80%;
+  width: 70%;
   opacity: 1;
 }
 

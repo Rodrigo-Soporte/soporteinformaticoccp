@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import ThemeToggle from "./theme-toggle";
 import ScrollReveal from "./ScrollReveal";
 import BackgroundEffects from "./BackgroundEffects";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://soporteinformaticoccp.cl"),
@@ -65,6 +67,20 @@ export default function RootLayout({
     <html lang="es">
       <body className="min-h-screen relative overflow-x-hidden">
 
+        {/* GOOGLE ANALYTICS */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PVJN68YDT6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PVJN68YDT6');
+          `}
+        </Script>
+
         <BackgroundEffects />
 
         <Navbar />
@@ -76,6 +92,10 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        {/* VERCEL ANALYTICS */}
+        <Analytics />
+
       </body>
     </html>
   );

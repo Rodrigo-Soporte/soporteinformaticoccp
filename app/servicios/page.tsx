@@ -62,7 +62,7 @@ export default function Servicios() {
       <section className="grid md:grid-cols-2 gap-10">
 
         <div className="glass-card floating-card space-y-4">
-          <h2 className="section-title-tech">
+          <h2 className="section-title-tech text-center block w-full">
             Implementación de Nuevas Tecnologías
           </h2>
           <p className="text-[var(--text-soft)]">
@@ -77,7 +77,7 @@ export default function Servicios() {
         </div>
 
         <div className="glass-card floating-card space-y-4">
-          <h2 className="section-title-tech">
+          <h2 className="section-title-tech text-center block w-full">
             Diagnóstico Computacional y Redes
           </h2>
           <p className="text-[var(--text-soft)]">
@@ -92,7 +92,7 @@ export default function Servicios() {
         </div>
 
         <div className="glass-card floating-card space-y-4">
-          <h2 className="section-title-tech">
+          <h2 className="section-title-tech text-center block w-full">
             Continuidad Operacional y Renovación Tecnológica
           </h2>
           <p className="text-[var(--text-soft)]">
@@ -106,7 +106,7 @@ export default function Servicios() {
         </div>
 
         <div className="glass-card floating-card space-y-4">
-          <h2 className="section-title-tech">
+          <h2 className="section-title-tech text-center block w-full">
             Formateo y Respaldo de Información
           </h2>
           <p className="text-[var(--text-soft)]">
@@ -178,7 +178,7 @@ export default function Servicios() {
       {/* DESARROLLO WEB */}
       <section className="glass-section floating-card space-y-6">
 
-        <h2 className="section-title-tech text-center">
+        <h2 className="section-title-tech text-center block w-full">
           Desarrollo Web Profesional
         </h2>
 
@@ -215,7 +215,7 @@ export default function Servicios() {
       {/* IMAGEN */}
       <section className="glass-section floating-card text-center space-y-6">
 
-        <h2 className="section-title-tech">
+        <h2 className="section-title-tech text-center block w-full">
           Infraestructura y Soporte TI
         </h2>
 

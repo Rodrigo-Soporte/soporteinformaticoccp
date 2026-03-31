@@ -56,7 +56,9 @@ export default function QuienesSomos() {
         <div className="space-y-10">
 
           <div className="glass-card floating-card space-y-4">
-            <h2 className="section-title-tech">Nuestra Experiencia</h2>
+            <h2 className="section-title-tech text-center block w-full">
+              Nuestra Experiencia
+            </h2>
             <p className="text-[var(--text-soft)]">
               Contamos con experiencia en diagnóstico computacional,
               redes de datos, modernización tecnológica y desarrollo
@@ -70,7 +72,9 @@ export default function QuienesSomos() {
           </div>
 
           <div className="glass-card floating-card space-y-4">
-            <h2 className="section-title-tech">Nuestra Filosofía</h2>
+            <h2 className="section-title-tech text-center block w-full">
+              Nuestra Filosofía
+            </h2>
             <p className="text-[var(--text-soft)]">
               Creemos que la tecnología debe ser un facilitador del
               crecimiento y no una fuente de problemas.
@@ -98,7 +102,7 @@ export default function QuienesSomos() {
       {/* VALORES */}
       <section className="glass-section floating-card space-y-6">
 
-        <h2 className="section-title-tech text-center">
+        <h2 className="section-title-tech text-center block w-full">
           Compromiso y Calidad
         </h2>
 

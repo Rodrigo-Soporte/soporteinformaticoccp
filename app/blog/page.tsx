@@ -29,7 +29,7 @@ export default function BlogPage() {
       {/* INTRODUCCIÓN DEL BLOG */}
       <section className="glass-section space-y-6">
 
-        <h2 className="section-title-tech text-center">
+        <h2 className="section-title-tech text-center block w-full">
           Conocimiento Tecnológico Aplicado a Entornos Reales
         </h2>
 

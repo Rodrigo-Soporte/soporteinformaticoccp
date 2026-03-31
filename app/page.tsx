@@ -96,7 +96,9 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8">
 
         <article className="glass-card">
-          <h2 className="section-title-tech">Nuestra Misión</h2>
+          <h2 className="section-title-tech text-center block w-full">
+            Nuestra Misión
+          </h2>
           <p className="opacity-80 leading-relaxed">
             Asegurar que la tecnología funcione como un pilar estratégico para nuestros clientes, entregando soporte confiable, preventivo y alineado con los objetivos operacionales.
           </p>
@@ -106,7 +108,9 @@ export default function Home() {
         </article>
 
         <article className="glass-card">
-          <h2 className="section-title-tech">Experiencia Técnica</h2>
+          <h2 className="section-title-tech text-center block w-full">
+            Experiencia Técnica
+          </h2>
           <p className="opacity-80 leading-relaxed">
             Contamos con experiencia en diagnóstico de equipamiento computacional, redes de datos, renovación tecnológica, respaldo de información y desarrollo web profesional.
           </p>
@@ -116,7 +120,9 @@ export default function Home() {
         </article>
 
         <article className="glass-card">
-          <h2 className="section-title-tech">Enfoque Profesional</h2>
+          <h2 className="section-title-tech text-center block w-full">
+            Enfoque Profesional
+          </h2>
           <p className="opacity-80 leading-relaxed">
             Nuestra metodología se basa en análisis técnico detallado, planificación estratégica y ejecución eficiente de cada proyecto.
           </p>
@@ -131,7 +137,7 @@ export default function Home() {
       <section className="max-w-4xl mx-auto px-6 pb-20">
         <div className="glass-section space-y-4">
 
-          <h2 className="section-title-tech">
+          <h2 className="section-title-tech text-center block w-full">
             Soporte Informático Integral para un Entorno Digital Exigente
           </h2>
 
